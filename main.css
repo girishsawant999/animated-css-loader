@@ -3,16 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
-section {
+/* loader 1 */
+section:nth-child(1) {
   display: flex;
   justify-content: center;
   align-items: center;
   background: #042104;
   min-height: 100vh;
   animation: animateBg 10s linear infinite;
-}
-section:nth-child(1) {
-  animation-delay: 5s;
 }
 @keyframes animateBg {
   0% {
@@ -22,19 +20,19 @@ section:nth-child(1) {
     filter: hue-rotate(360deg);
   }
 }
-section .loader {
+section:nth-child(1) .loader {
   position: relative;
   width: 120px;
   height: 120px;
 }
-section .loader span {
+section:nth-child(1) .loader span {
   position: absolute;
   top: 0;
   height: 100%;
   width: 100%;
   transform: rotate(calc(18deg * var(--i)));
 }
-section .loader span::before {
+section:nth-child(1) .loader span::before {
   content: '';
   position: absolute;
   top: 0;
@@ -56,4 +54,69 @@ section .loader span::before {
   100% {
     transform: scale(0);
   }
+}
+
+/* Loader 2 */
+section:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #102626;
+  min-height: 100vh;
+  animation: none;
+  -webkit-box-reflect: below 1px linear-gradient(#0001, #0004);
+}
+section:nth-child(2) .loader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #0d2323;
+  animation: animateLoader2 1s infinite;
+}
+@keyframes animateLoader2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+section:nth-child(2) .loader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to top, transparent, rgb(0, 255, 249, 0.4));
+  background-repeat: no-repeat;
+  background-size: 180px 180px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+section:nth-child(2) .loader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #00fff9;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9, 0 0 30px #00fff9,
+    0 0 40px #00fff9, 0 0 50px #00fff9, 0 0 60px #00fff9, 0 0 70px #00fff9,
+    0 0 80px #00fff9, 0 0 90px #00fff9, 0 0 100px #00fff9;
+}
+section:nth-child(2) .loader span {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border-radius: 50%;
+  background: #0d2323;
+  border-radius: 50%;
 }
