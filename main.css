@@ -3,13 +3,27 @@
   margin: 0;
   box-sizing: border-box;
 }
-/* loader 1 */
-section:nth-child(1) {
+section .label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  padding: 10px;
+  font-family: cursive;
+  font-size: 1.5rem;
+  border-radius: 5px;
+}
+section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #042104;
   min-height: 100vh;
+  position: relative;
+}
+
+/* loader 1 */
+section:nth-child(1) {
+  background: #042104;
   animation: animateBg 10s linear infinite;
 }
 @keyframes animateBg {
@@ -58,14 +72,8 @@ section:nth-child(1) .loader span::before {
 
 /* Loader 2 */
 section:nth-child(2) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: #102626;
-  min-height: 100vh;
-  animation: none;
   -webkit-box-reflect: below 1px linear-gradient(#0001, #0004);
-  animation: animateBg 2s linear infinite;
 }
 section:nth-child(2) .loader {
   position: relative;
@@ -120,4 +128,40 @@ section:nth-child(2) .loader span {
   border-radius: 50%;
   background: #0d2323;
   border-radius: 50%;
+}
+
+/* Loader 3 */
+section:nth-child(3) {
+  background: linear-gradient(#000000bf, #000000f5);
+}
+section:nth-child(3) .loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
+}
+section:nth-child(3) .loader span {
+  position: relative;
+  height: 40%;
+  width: 10%;
+  background: white;
+  margin: 0px 5px;
+  animation: animateLoader3 1600ms linear infinite;
+  animation-delay: calc(400ms * var(--i));
+  box-shadow: 0 0 10px white;
+  border-radius: 10px;
+}
+@keyframes animateLoader3 {
+  0% {
+    height: 40%;
+  }
+  40%,
+  50%,
+  60% {
+    height: 1%;
+  }
+  100% {
+    height: 40%;
+  }
 }
