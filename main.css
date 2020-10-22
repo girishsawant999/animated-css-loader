@@ -223,19 +223,6 @@ section:nth-child(5) .loader {
     transform: rotate(45deg);
   }
 }
-/* section:nth-child(5) .loader::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(to top, transparent, rgb(0, 255, 249, 0.4));
-  background-repeat: no-repeat;
-  background-size: 180px 180px;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-} */
 section:nth-child(5) .loader::after {
   content: '';
   position: absolute;
@@ -248,13 +235,3 @@ section:nth-child(5) .loader::after {
   border-radius: 50%;
   z-index: 2;
 }
-/* section:nth-child(5) .loader span {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  border-radius: 50%;
-  background: #0d2323;
-  border-radius: 50%;
-} */
