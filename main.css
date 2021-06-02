@@ -47,7 +47,7 @@ section:nth-child(1) .loader span {
   transform: rotate(calc(18deg * var(--i)));
 }
 section:nth-child(1) .loader span::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -92,7 +92,7 @@ section:nth-child(2) .loader {
   }
 }
 section:nth-child(2) .loader::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -105,7 +105,7 @@ section:nth-child(2) .loader::before {
   border-bottom-left-radius: 100px;
 }
 section:nth-child(2) .loader::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -223,7 +223,7 @@ section:nth-child(5) .loader {
   }
 }
 section:nth-child(5) .loader::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -233,4 +233,113 @@ section:nth-child(5) .loader::after {
   background: grey;
   border-radius: 50%;
   z-index: 2;
+}
+
+/* Loader 6 */
+section:nth-child(6) {
+  background: rgb(190, 190, 190);
+}
+section:nth-child(6) .loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+section:nth-child(6) .loader span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+section:nth-child(6) .loader span::after {
+  content: "";
+  width: 100%;
+  height: 20px;
+  background: radial-gradient(rgba(0, 0, 0, 0.1), transparent);
+  position: absolute;
+  bottom: -40px;
+  border-radius: 50%;
+}
+section:nth-child(6) .loader span:nth-child(1) {
+  background: rgb(68, 81, 255);
+  animation: animate6 1500ms linear infinite;
+}
+section:nth-child(6) .loader span:nth-child(2) {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  left: 50%;
+  animation: animate6 1500ms linear infinite;
+  animation-delay: 750ms;
+}
+@keyframes animate6 {
+  0%,
+  100% {
+    left: -50%;
+  }
+  50% {
+    left: 50%;
+  }
+}
+
+/* Loader 7 */
+section:nth-child(7) {
+  background: rgb(165, 165, 165);
+}
+section:nth-child(7) .loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+section:nth-child(7) .loader span {
+  position: absolute;
+  border-radius: 50%;
+}
+section:nth-child(7) .loader span:nth-child(2)::after {
+  content: "";
+  width: 100%;
+  height: 20px;
+  background: radial-gradient(rgba(0, 0, 0, 0.1), transparent);
+  position: absolute;
+  bottom: -40px;
+  border-radius: 50%;
+}
+
+section:nth-child(7) .loader span:nth-child(1) {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  animation: animate7 1s linear infinite;
+  transform: rotate(0deg);
+  border: 50px solid;
+  border-color: transparent transparent transparent rgb(255, 0, 149);
+}
+
+/* section:nth-child(7) .loader span:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 0, 149);
+} */
+section:nth-child(7) .loader span:nth-child(2) {
+  top: 7px;
+  bottom: 7px;
+  left: 7px;
+  right: 7px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+@keyframes animate7 {
+  100% {
+    transform: rotate(360deg);
+  }
 }
